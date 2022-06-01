@@ -1,0 +1,24 @@
+1. After creating an account, the Admin provides the username and password
+of the account to the hall staff and house tutors individually. They will enter
+all of their necessary information- first name, last name and phone number
+after their first login.They can change their password with the help of the
+admin. Admin can deactivate any inactive account.
+2. A predefined account will be given to the system admin.
+3. The hall staff are responsible for the data input regarding students. They
+will manage the database and the info management system,search and
+update and generate reports.
+4. Staff will be able to search or update update information related to
+students by using their name,registration number and session.
+5. Students will login to the system using their registration number.They are
+only able view their allocation status,department and session.
+6. Real time tracking of student’s room allocation status.
+
+7. The house tutor will be able to visit rooms and check the overall situation
+of the students.They can also inquire about the reports or product
+inventory.
+8. There will be an inventory section where information about products will
+be sorted in the order of rooms of a particular floor i.e electric products
+and furnitures. The inventory will show the status of a particular products
+condition if it needs to be replaced or fixed or a new product has just
+arrived or not
+9. Staff will be able to generate reports regarding students and the inventory.

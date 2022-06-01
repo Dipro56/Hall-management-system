@@ -1,27 +1,27 @@
 import React from 'react';
 
-export const Loginpage = () => {
-  const loginFormController = (event) => {
+export const Adminpage = () => {
+  const adminFormController = (event) => {
     event.preventDefault();
 
-    const userName = event.target.username.value;
+    const email = event.target.email.value;
     const password = event.target.password.value;
 
-    console.log(userName, password);
+    console.log(email, password);
   };
 
   return (
     <div className="container col-lg-6 col-md-12 col-sm-12 mt-5  bg-light p-5">
-      <form onSubmit={loginFormController}>
+      <form onSubmit={adminFormController}>
         <div className="form-group ">
-          <label for="exampleInputEmail1">Username</label>
+          <label for="exampleInputEmail1">Admin Email</label>
           <input
-            type="text"
+            type="email"
             className="form-control"
-            id="username"
-            name="username"
+            id="email"
+            name="email"
             aria-describedby="emailHelp"
-            placeholder="Username"
+            placeholder="Email"
             required
           />
         </div>

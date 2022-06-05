@@ -32,6 +32,7 @@ export const Adminpage = () => {
     } else {
       console.log('wrong credential');
       console.log(adminCredential.email, adminCredential.password);
+      alert('Give proper email and password');
     }
 
     //fetch post code

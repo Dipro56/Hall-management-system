@@ -1,8 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { useAddMember } from '../../Hooks/useAddMember';
 
 export const MemberList = (props) => {
   const { userName, memberStatus, _id } = props.memberInfo;
   console.log(userName, memberStatus);
+
+  const { setMemberCredential } = useAddMember();
 
   const deleteUser = (id) => {
     const proceed = window.confirm('Are you sure want to delete?');
@@ -14,7 +18,10 @@ export const MemberList = (props) => {
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log('Success:', data);
+          if (data.deletedCount > 0) {
+            const remining = data.filter((data) => data._id !== id);
+            setMemberCredential(remining);
+          }
         })
         .catch((error) => {
           console.error('Error:', error);
@@ -32,9 +39,17 @@ export const MemberList = (props) => {
           </p>
         </div>
         <div className="d-flex  justify-content-end align-item-center">
-          <button type="submit" className="btn btn-primary m-3 bg-primary">
-            Edit user
-          </button>
+          <Link to={`/addMember/${_id}`}>
+            <button
+              onClick={() => {
+                console.log('Update pressed');
+              }}
+              type="submit"
+              className="btn btn-primary m-3 bg-primary"
+            >
+              Edit User
+            </button>
+          </Link>
           <button
             onClick={() => {
               deleteUser(_id);

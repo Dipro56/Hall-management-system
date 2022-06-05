@@ -63,11 +63,40 @@ async function addMember() {
       res.end();
     });
 
+    app.get('/addMember/:id', async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: ObjectId(id) };
+      const cursor = database.find(query);
+      const memberInfo = await cursor.toArray();
+      res.send(memberInfo);
+      res.end();
+    });
+
     app.post('/addMember', async (req, res) => {
       const memberInfo = req.body;
       console.log('Member info added', memberInfo);
       const result = await database.insertOne(memberInfo);
       res.send(result);
+      res.end();
+    });
+
+    //put data
+
+    app.put('/addMember/:id', async (req, res) => {
+      const id = req.params.id;
+      const updateUser = req.body;
+      const filter = { _id: ObjectId(id) };
+      const options = { upsert: true };
+      const updateDoc = {
+        $set: {
+          userName: updateUser.userName,
+          password: updateUser.password,
+          memberStatus: updateUser.memberStatus,
+        },
+      };
+      const result = await database.updateOne(filter, updateDoc, options);
+      res.send(result);
+      res.end();
     });
 
     //delete data
@@ -77,6 +106,7 @@ async function addMember() {
       const query = { _id: ObjectId(id) };
       const result = await database.deleteOne(query);
       res.send(result);
+      res.end();
     });
   } catch {
     console.log(error);

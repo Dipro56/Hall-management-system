@@ -6,6 +6,7 @@ import { Loginpage } from './Routes/Loginpage/Loginpage';
 import { Adminpage } from './Routes/Adminpage/Adminpage';
 import { Dashboard } from './Routes/Dashboardpage/Dashboard';
 import { Addmemberpage } from './Routes/Addmemberpage/Addmemberpage';
+import { Updateuserpage } from './Routes/Updateuserpage/Updateuser';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/login" element={<Loginpage />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/addMember" element={<Addmemberpage />} />
+        <Route path="/addMember/:id" element={<Updateuserpage />} />
       </Routes>
     </div>
   );

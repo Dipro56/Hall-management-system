@@ -25,8 +25,6 @@ async function run() {
       .db('Hall-Management-Sytem')
       .collection('adminCredential');
 
-    const addMember = client.db('Hall-Management-Sytem').collection('member');
-
     app.get('/admin', async (req, res) => {
       const query = {};
       const cursor = database.find(query);
@@ -53,6 +51,15 @@ async function addMember() {
     await client.connect();
 
     const database = client.db('Hall-Management-Sytem').collection('member');
+
+    app.get('/addMember', async (req, res) => {
+      const query = {};
+      const cursor = database.find(query);
+      const memberInfo = await cursor.toArray();
+      console.log(memberInfo);
+      res.send(memberInfo);
+      res.end();
+    });
 
     app.post('/addMember', async (req, res) => {
       const memberInfo = req.body;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAdminCredential } from '../../Hooks/useAdminCredential';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const Adminpage = () => {
   //const [adminCredential, setAdminCredential] = useState([]);
@@ -79,6 +80,14 @@ export const Adminpage = () => {
           />
         </div>
         <br />
+
+        <p className="danger">
+          {' '}
+          <Link className="nav-item nav-link" to="/admin">
+            Forget password?
+          </Link>
+        </p>
+
         <button type="submit" className="btn btn-primary m-3">
           Submit
         </button>

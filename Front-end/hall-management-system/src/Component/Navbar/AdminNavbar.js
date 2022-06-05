@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const Navbar = () => {
+export const AdminNavbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <button
@@ -17,14 +17,14 @@ export const Navbar = () => {
       </button>
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div className="navbar-nav">
-          <Link className="nav-item nav-link" to="/">
-            Home
+          <Link className="nav-item nav-link" to="/addMember">
+            Add Member
           </Link>
-          <Link className="nav-item nav-link" to="/admin">
-            Admin
+          <Link className="nav-item nav-link" to="/addProduct">
+            Add Product
           </Link>
-          <Link className="nav-item nav-link" to="/login">
-            Login
+          <Link className="nav-item nav-link" to="/summery">
+            Hall Summery
           </Link>
         </div>
       </div>

@@ -1,6 +1,17 @@
 import React from 'react';
+import { useAdminCredential } from '../../Hooks/useAdminCredential';
+import { useNavigate } from 'react-router-dom';
 
 export const Adminpage = () => {
+  //const [adminCredential, setAdminCredential] = useState([]);
+  const { adminCredential } = useAdminCredential();
+  console.log(adminCredential);
+
+  const navigate = useNavigate();
+  //const location = useLocation();
+
+  //let form = '/dashboard';
+
   const adminFormController = (event) => {
     event.preventDefault();
 
@@ -8,6 +19,36 @@ export const Adminpage = () => {
     const password = event.target.password.value;
 
     console.log(email, password);
+
+    // const adminInfo = { email, password };
+
+    if (
+      adminCredential[0].email === email &&
+      adminCredential[0].password === password
+    ) {
+      console.log('admin matched');
+      navigate('/dashboard', { replace: true });
+    } else {
+      console.log('wrong credential');
+      console.log(adminCredential.email, adminCredential.password);
+    }
+
+    //fetch post code
+
+    // fetch('http://localhost:5000/admin', {
+    //   method: 'POST', // or 'PUT'
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(adminInfo),
+    // })
+    //   .then((response) => response.json())
+    //   .then((adminInfo) => {
+    //     console.log('Success:', adminInfo);
+    //   })
+    //   .catch((error) => {
+    //     console.error('Error:', error);
+    //   });
   };
 
   return (

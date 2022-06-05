@@ -36,7 +36,7 @@ export const Addmemberpage = () => {
 
   return (
     <div>
-      <div className="container col-lg-6 col-md-12 col-sm-12 mt-5  bg-light p-5">
+      <div className="container  col-lg-8 col-md-12 col-sm-12 mt-5  bg-light p-5">
         <div>
           <h3 className="p-3">Add New User</h3>
         </div>
@@ -86,9 +86,9 @@ export const Addmemberpage = () => {
         <br />
       </div>
 
-      <div className="mt-5 container justify-content-center container-fluid col-7">
+      <div className="mt-5  justify-content-center  col-12">
         <h1>Total Member : {showAllMember.length}</h1>
-        <div className="mb-5">
+        <div className="mb-5 container">
           <ol>
             {showAllMember.map((data) => (
               <MemberList key={data._id} memberInfo={data} />

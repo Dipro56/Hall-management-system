@@ -7,6 +7,8 @@ import { Adminpage } from './Routes/Adminpage/Adminpage';
 import { Dashboard } from './Routes/Dashboardpage/Dashboard';
 import { Addmemberpage } from './Routes/Addmemberpage/Addmemberpage';
 import { Updateuserpage } from './Routes/Updateuserpage/Updateuser';
+import { Userdetailspage } from './Routes/Userdetailspage/Userdetailspage';
+import { StaffPage } from './Routes/StaffPage/StaffPage';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/addMember" element={<Addmemberpage />} />
         <Route path="/addMember/:id" element={<Updateuserpage />} />
+        <Route path="/userDetails/:id" element={<Userdetailspage />} />
+        <Route path="/Staff/:id" element={<StaffPage />} />
       </Routes>
     </div>
   );

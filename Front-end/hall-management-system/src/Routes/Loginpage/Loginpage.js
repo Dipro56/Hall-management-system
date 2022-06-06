@@ -1,6 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useStaffLogin } from '../../Hooks/useStaffLogin';
 
 export const Loginpage = () => {
+  const { staffList } = useStaffLogin();
+  const navigate = useNavigate();
+
   const loginFormController = (event) => {
     event.preventDefault();
 
@@ -8,10 +13,21 @@ export const Loginpage = () => {
     const password = event.target.password.value;
 
     console.log(userName, password);
+
+    const staffMember = staffList.find(
+      (member) => member.userName === userName && member.password === password
+    );
+    console.log(staffMember);
+    if (staffMember) {
+      navigate(`/staff/${staffMember?._id}`, { replace: true });
+    } else {
+      alert('Give correct user name and password');
+    }
   };
 
   return (
     <div className="container col-lg-6 col-md-12 col-sm-12 mt-5  bg-light p-5">
+      <div>Staff List : {staffList.length}</div>
       <form onSubmit={loginFormController}>
         <div className="form-group ">
           <label for="exampleInputEmail1">Username</label>

@@ -39,6 +39,17 @@ export const MemberList = (props) => {
           </p>
         </div>
         <div className="d-flex  justify-content-end align-item-center">
+          <Link to={`/userDetails/${_id}`}>
+            <button
+              onClick={() => {
+                console.log('Update pressed');
+              }}
+              type="submit"
+              className="btn btn-success m-3 bg-success"
+            >
+              User details
+            </button>
+          </Link>
           <Link to={`/addMember/${_id}`}>
             <button
               onClick={() => {
@@ -47,7 +58,7 @@ export const MemberList = (props) => {
               type="submit"
               className="btn btn-primary m-3 bg-primary"
             >
-              Edit User
+              Edit user
             </button>
           </Link>
           <button

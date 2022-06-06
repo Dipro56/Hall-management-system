@@ -19,7 +19,7 @@ export const Loginpage = () => {
     );
     console.log(staffMember);
     if (staffMember) {
-      navigate(`/staff/${staffMember?._id}`, { replace: true });
+      navigate(`/setStaffProfile/${staffMember?._id}`, { replace: true });
     } else {
       alert('Give correct user name and password');
     }

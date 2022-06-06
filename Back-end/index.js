@@ -114,6 +114,55 @@ async function addMember() {
 }
 addMember().catch(console.dir);
 
+async function staffDetails() {
+  try {
+    await client.connect();
+
+    const database = client
+      .db('Hall-Management-Sytem')
+      .collection('staff-details');
+
+    app.post('/setStaffProfile', async (req, res) => {
+      const staffInfo = req.body;
+      console.log('Member info added', staffInfo);
+      const result = await database.insertOne(staffInfo);
+      res.send(result);
+      res.end();
+    });
+
+    app.get('/staffDetail/:id', async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: ObjectId(id) };
+      const cursor = database.find(query);
+      const staffInfo = await cursor.toArray();
+      res.send(staffInfo);
+      res.end();
+    });
+
+    //put data
+
+    // app.put('/addMember/:id', async (req, res) => {
+    //   const id = req.params.id;
+    //   const updateUser = req.body;
+    //   const filter = { _id: ObjectId(id) };
+    //   const options = { upsert: true };
+    //   const updateDoc = {
+    //     $set: {
+    //       userName: updateUser.userName,
+    //       password: updateUser.password,
+    //       memberStatus: updateUser.memberStatus,
+    //     },
+    //   };
+    //   const result = await database.updateOne(filter, updateDoc, options);
+    //   res.send(result);
+    //   res.end();
+    // });
+  } catch {
+    console.log(error);
+  }
+}
+staffDetails().catch(console.dir);
+
 app.get('/', (req, res) => {
   res.send('<h1>Hall management system</h1>');
 });

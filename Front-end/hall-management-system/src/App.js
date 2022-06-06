@@ -9,6 +9,7 @@ import { Addmemberpage } from './Routes/Addmemberpage/Addmemberpage';
 import { Updateuserpage } from './Routes/Updateuserpage/Updateuser';
 import { Userdetailspage } from './Routes/Userdetailspage/Userdetailspage';
 import { StaffPage } from './Routes/StaffPage/StaffPage';
+import { Staffdetailpage } from './Routes/Staffdetailpage/Staffdetailpage';
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
         <Route path="/addMember" element={<Addmemberpage />} />
         <Route path="/addMember/:id" element={<Updateuserpage />} />
         <Route path="/userDetails/:id" element={<Userdetailspage />} />
-        <Route path="/Staff/:id" element={<StaffPage />} />
+        <Route path="/setStaffProfile/:id" element={<StaffPage />} />
+        <Route path="/staffDetail/:id" element={<Staffdetailpage />} />
       </Routes>
     </div>
   );

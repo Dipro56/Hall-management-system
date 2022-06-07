@@ -10,6 +10,8 @@ import { Updateuserpage } from './Routes/Updateuserpage/Updateuser';
 import { Userdetailspage } from './Routes/Userdetailspage/Userdetailspage';
 import { StaffPage } from './Routes/StaffPage/StaffPage';
 import { Staffdetailpage } from './Routes/Staffdetailpage/Staffdetailpage';
+import { AddStudentPage } from './Routes/AddStudentPage/AddStudentPage';
+import { UpdateStudentPage } from './Routes/UpdateStudentPage/UpdateStudentPage';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         <Route path="/userDetails/:id" element={<Userdetailspage />} />
         <Route path="/setStaffProfile/:id" element={<StaffPage />} />
         <Route path="/staffDetail/:id" element={<Staffdetailpage />} />
+        <Route path="/addStudent/:id" element={<AddStudentPage />} />
+        <Route path="/updateStudent/:id" element={<UpdateStudentPage />} />
       </Routes>
     </div>
   );

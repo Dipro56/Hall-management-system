@@ -172,6 +172,36 @@ async function staffDetails() {
 }
 staffDetails().catch(console.dir);
 
+async function addStudent() {
+  try {
+    await client.connect();
+
+    const database = client
+      .db('Hall-Management-Sytem')
+      .collection('student-details');
+
+    app.post('/studentDetails', async (req, res) => {
+      const studentDetails = req.body;
+      console.log('Student details added', studentDetails);
+      const result = await database.insertOne(studentDetails);
+      res.send(result);
+      res.end();
+    });
+
+    app.get('/studentDetails', async (req, res) => {
+      const query = {};
+      const cursor = database.find(query);
+      const studentDetails = await cursor.toArray();
+      console.log(studentDetails);
+      res.send(studentDetails);
+      res.end();
+    });
+  } catch {
+    console.log(error);
+  }
+}
+addStudent().catch(console.dir);
+
 app.get('/', (req, res) => {
   res.send('<h1>Hall management system</h1>');
 });

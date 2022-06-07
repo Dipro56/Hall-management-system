@@ -1,12 +1,13 @@
 import React from 'react';
-// import { SaffCard } from '../../Component/SaffCard/SaffCard';
 import { useParams, useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { StudentListEdit } from '../../Component/StudentListEdit/StudentListEdit';
+import { useStudentListEdit } from '../../Hooks/useStudentListEdit';
 
-export const Staffdetailpage = () => {
+export const UpdateStudentPage = (props) => {
   const { id } = useParams();
+  const navigate = useNavigate(id);
 
-  const navigate = useNavigate();
+  const { studentListEdit } = useStudentListEdit();
 
   const setProfileNegivationController = () => {
     navigate(`/setStaffProfile/${id}`, { replace: true });
@@ -23,25 +24,9 @@ export const Staffdetailpage = () => {
   const logoutNegivationController = () => {
     navigate(`/login`, { replace: true });
   };
-
-  const [singleStaffDetail, setSingleStaffDetail] = useState([]);
-
-  useEffect(() => {
-    fetch(`http://localhost:5000/staffDetail`)
-      .then((res) => res.json())
-      .then((data) => {
-        setSingleStaffDetail(data);
-        console.log(data);
-        const staffMember = data.find((member) => member.staffID === id);
-        setSingleStaffDetail(staffMember);
-        console.log(staffMember);
-      });
-  }, [id]);
-
   return (
     <div className="d-flex justify-content-center align-items-center flex-column">
-      {/* <StaffNavbar /> */}
-      <div className="d-flex justify-content-center align-items-center">
+      <div className="d-flex justify-content-center align-items-center ">
         <button
           onClick={setProfileNegivationController}
           type="button"
@@ -78,18 +63,15 @@ export const Staffdetailpage = () => {
           Logout
         </button>
       </div>
-      <div class="card  col-6">
-        <div class="card-body bg-light">
-          <h5 class="card-title">User Details</h5>
-          <h6 class="card-subtitle m-2">
-            First Name : {singleStaffDetail?.firstName}
-          </h6>
-          <h6 class="card-subtitle m-2">
-            Last Name : {singleStaffDetail?.lastName}{' '}
-          </h6>
-          <h6 class="card-subtitle m-2">
-            Phone no : {singleStaffDetail?.phoneNumber}{' '}
-          </h6>
+
+      <div className="mt-5  justify-content-center  col-12">
+        <h1>Total Member : {studentListEdit.length}</h1>
+        <div className="mb-5 container">
+          <ol>
+            {studentListEdit.map((data) => (
+              <StudentListEdit key={data._id} memberInfo={data} />
+            ))}
+          </ol>
         </div>
       </div>
     </div>

@@ -130,6 +130,15 @@ async function staffDetails() {
       res.end();
     });
 
+    app.get('/staffDetail', async (req, res) => {
+      const query = {};
+      const cursor = database.find(query);
+      const staffDetail = await cursor.toArray();
+      console.log(staffDetail);
+      res.send(staffDetail);
+      res.end();
+    });
+
     app.get('/staffDetail/:id', async (req, res) => {
       const id = req.params.id;
       const query = { _id: ObjectId(id) };

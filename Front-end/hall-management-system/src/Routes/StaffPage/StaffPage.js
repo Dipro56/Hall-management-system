@@ -1,10 +1,10 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 // import { StaffNavbar } from '../../Component/Navbar/StaffNavbar';
 
 export const StaffPage = () => {
   const { id } = useParams();
-
+  const navigate = useNavigate(id);
   // const [showStaffDetail, setShowStaffDetail] = useState([]);
 
   // useEffect(() => {
@@ -16,6 +16,13 @@ export const StaffPage = () => {
   //       console.log(showStaffDetail);
   //     });
   // });
+
+  const setProfileNegivationController = () => {
+    navigate(`/setStaffProfile/${id}`, { replace: true });
+  };
+  const detailNegivationController = () => {
+    navigate(`/staffDetail/${id}`, { replace: true });
+  };
 
   const addMemberController = (event) => {
     event.preventDefault();
@@ -48,6 +55,20 @@ export const StaffPage = () => {
   return (
     <div className="d-flex justify-content-center align-items-center flex-column">
       <div className="d-flex justify-content-center align-items-center ">
+        <button
+          onClick={setProfileNegivationController}
+          type="button"
+          class="btn btn-link fs-5 m-3"
+        >
+          Set profile
+        </button>
+        <button
+          onClick={detailNegivationController}
+          type="button"
+          class="btn btn-link fs-5 m-3"
+        >
+          Details
+        </button>
         <Link className="nav-item nav-link fs-4" to={`/setStaffProfile/${id}`}>
           Set profile
         </Link>

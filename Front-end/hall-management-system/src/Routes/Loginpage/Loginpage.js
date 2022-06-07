@@ -1,10 +1,11 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate, useLocation } from 'react-router-dom';
 import { useStaffLogin } from '../../Hooks/useStaffLogin';
 
 export const Loginpage = () => {
   const { staffList } = useStaffLogin();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const loginFormController = (event) => {
     event.preventDefault();
@@ -19,8 +20,14 @@ export const Loginpage = () => {
     );
     console.log(staffMember);
     if (staffMember) {
+      // <Navigate
+      //   to={`/setStaffProfile/${staffMember?._id}`}
+      //   state={{ from: location }}
+      //   replace
+      // />;
       navigate(`/setStaffProfile/${staffMember?._id}`, { replace: true });
     } else {
+      <Navigate to="/login" state={{ from: location }} replace />;
       alert('Give correct user name and password');
     }
   };

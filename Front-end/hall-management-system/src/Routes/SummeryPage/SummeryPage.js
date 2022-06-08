@@ -1,9 +1,7 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
-export const Userdetailspage = () => {
-  const { id } = useParams();
+export const SummeryPage = () => {
   const navigate = useNavigate();
 
   const addMemberNegivationController = () => {
@@ -16,6 +14,7 @@ export const Userdetailspage = () => {
   const summeryNegivationController = () => {
     navigate(`/summery`, { replace: true });
   };
+
   return (
     <div>
       <div className="d-flex justify-content-center align-items-center ">
@@ -42,7 +41,7 @@ export const Userdetailspage = () => {
           Logout
         </button>
       </div>
-      <h1>User details page for ID : ${id}</h1>
+      <h1>Summery Page</h1>
     </div>
   );
 };

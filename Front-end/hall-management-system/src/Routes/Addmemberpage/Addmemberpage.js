@@ -1,9 +1,22 @@
 import React from 'react';
 import { useShowAllMember } from '../../Hooks/useShowAllMember';
 import { MemberList } from '../../Component/MemberList/MemberList';
+import { useNavigate } from 'react-router-dom';
 
 export const Addmemberpage = () => {
   const { showAllMember } = useShowAllMember();
+  const navigate = useNavigate();
+
+  const addMemberNegivationController = () => {
+    navigate(`/addMember`, { replace: true });
+  };
+
+  const logoutNegivationController = () => {
+    navigate(`/admin`, { replace: true });
+  };
+  const summeryNegivationController = () => {
+    navigate(`/summery`, { replace: true });
+  };
 
   const addMemberController = (event) => {
     event.preventDefault();
@@ -36,6 +49,30 @@ export const Addmemberpage = () => {
 
   return (
     <div>
+      <div className="d-flex justify-content-center align-items-center ">
+        <button
+          onClick={addMemberNegivationController}
+          type="button"
+          class="btn btn-link fs-5 m-3"
+        >
+          Add member
+        </button>
+        <button
+          onClick={summeryNegivationController}
+          type="button"
+          class="btn btn-link fs-5 m-3"
+        >
+          Summery
+        </button>
+
+        <button
+          onClick={logoutNegivationController}
+          type="button"
+          class="btn btn-link fs-5 m-3"
+        >
+          Logout
+        </button>
+      </div>
       <div className="container  col-lg-8 col-md-12 col-sm-12 mt-5  bg-light p-5">
         <div>
           <h3 className="p-3">Add New User</h3>

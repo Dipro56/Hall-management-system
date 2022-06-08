@@ -28,7 +28,7 @@ export const Adminpage = () => {
       adminCredential[0].password === password
     ) {
       console.log('admin matched');
-      navigate('/dashboard', { replace: true });
+      navigate('/addMember', { replace: true });
     } else {
       console.log('wrong credential');
       console.log(adminCredential.email, adminCredential.password);
@@ -84,8 +84,8 @@ export const Adminpage = () => {
 
         <p className="danger">
           {' '}
-          <Link className="nav-item nav-link" to="/admin">
-            Forget password?
+          <Link className="nav-item nav-link" to="/adminPasswordReset">
+            Reset password?
           </Link>
         </p>
 

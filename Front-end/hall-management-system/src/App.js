@@ -12,6 +12,8 @@ import { StaffPage } from './Routes/StaffPage/StaffPage';
 import { Staffdetailpage } from './Routes/Staffdetailpage/Staffdetailpage';
 import { AddStudentPage } from './Routes/AddStudentPage/AddStudentPage';
 import { UpdateStudentPage } from './Routes/UpdateStudentPage/UpdateStudentPage';
+import { AdminPasswordResetPage } from './Routes/AdminPasswordResetPage/AdminPasswordResetPage';
+import { SummeryPage } from './Routes/SummeryPage/SummeryPage';
 
 function App() {
   return (
@@ -29,6 +31,11 @@ function App() {
         <Route path="/staffDetail/:id" element={<Staffdetailpage />} />
         <Route path="/addStudent/:id" element={<AddStudentPage />} />
         <Route path="/updateStudent/:id" element={<UpdateStudentPage />} />
+        <Route path="/summery" element={<SummeryPage />} />
+        <Route
+          path="/adminPasswordReset"
+          element={<AdminPasswordResetPage />}
+        />
       </Routes>
     </div>
   );

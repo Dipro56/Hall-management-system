@@ -42,6 +42,22 @@ async function run() {
       const result = await database.insertOne(adminInfo);
       res.send(result);
     });
+
+    app.put('/admin/:id', async (req, res) => {
+      const id = req.params.id;
+      const updateAdmin = req.body;
+      const filter = { _id: ObjectId(id) };
+      const options = { upsert: true };
+      const updateDoc = {
+        $set: {
+          email: updateAdmin.email,
+          password: updateAdmin.newPassword,
+        },
+      };
+      const result = await database.updateOne(filter, updateDoc, options);
+      res.send(result);
+      res.end();
+    });
   } catch {
     console.log(error);
   }

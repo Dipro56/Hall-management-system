@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Navbar.css';
+import DU_Logo from '../../Assets/DU_Logo.png';
 
 export const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light p-4">
+    <nav className="navbar-edit navbar navbar-expand-lg  p-4">
       <button
         className="navbar-toggler"
         type="button"
@@ -15,22 +17,20 @@ export const Navbar = () => {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div className="navbar-nav">
-          <Link
-            className="nav-item nav-link fs-4 ms-2 me-2 text-primary"
-            to="/"
-          >
+      <div className="collapse navbar-collapse " id="navbarNavAltMarkup">
+        <div className="navbar-nav align-items-center">
+          <img className="logo m-3" src={DU_Logo} alt=".." />
+          <Link className="nav-item nav-link fs-4 ms-2 me-2 text-light" to="/">
             Home
           </Link>
           <Link
-            className="nav-item nav-link fs-4  ms-2 me-2 text-primary"
+            className="nav-item nav-link fs-4  ms-2 me-2 text-light"
             to="/admin"
           >
             Admin
           </Link>
           <Link
-            className="nav-item nav-link fs-4 ms-2 me-2 text-primary"
+            className="nav-item nav-link fs-4 ms-2 me-2 text-light"
             to="/login"
           >
             Login

@@ -212,11 +212,51 @@ async function addStudent() {
       res.send(studentDetails);
       res.end();
     });
+
+    app.delete('/studentDetails/:id', async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: ObjectId(id) };
+      const result = await database.deleteOne(query);
+      res.send(result);
+      res.end();
+    });
   } catch {
     console.log(error);
   }
 }
 addStudent().catch(console.dir);
+
+async function editStudent() {
+  try {
+    await client.connect();
+
+    const database = client
+      .db('Hall-Management-Sytem')
+      .collection('student-details');
+
+    app.put('/editStudent/:id', async (req, res) => {
+      const id = req.params.id;
+      const updateUser = req.body;
+      const filter = { _id: ObjectId(id) };
+      const options = { upsert: true };
+      const updateDoc = {
+        $set: {
+          userName: updateUser.userName,
+          registrationNo: updateUser.registrationNo,
+          session: updateUser.session,
+          allocatedHall: updateUser.allocatedHall,
+          allocatedRoom: updateUser.allocatedRoom,
+        },
+      };
+      const result = await database.updateOne(filter, updateDoc, options);
+      res.send(result);
+      res.end();
+    });
+  } catch {
+    console.log(error);
+  }
+}
+editStudent().catch(console.dir);
 
 app.get('/', (req, res) => {
   res.send('<h1>Hall management system</h1>');

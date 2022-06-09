@@ -14,6 +14,7 @@ import { AddStudentPage } from './Routes/AddStudentPage/AddStudentPage';
 import { UpdateStudentPage } from './Routes/UpdateStudentPage/UpdateStudentPage';
 import { AdminPasswordResetPage } from './Routes/AdminPasswordResetPage/AdminPasswordResetPage';
 import { SummeryPage } from './Routes/SummeryPage/SummeryPage';
+import { EditStudentPage } from './Routes/EditStudentPage/EditStudentPage';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           path="/adminPasswordReset"
           element={<AdminPasswordResetPage />}
         />
+        <Route path="/editStudent/:id" element={<EditStudentPage />} />
       </Routes>
     </div>
   );

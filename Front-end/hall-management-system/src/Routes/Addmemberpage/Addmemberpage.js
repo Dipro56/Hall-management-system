@@ -73,16 +73,18 @@ export const Addmemberpage = () => {
           Logout
         </button>
       </div>
-      <div className="container  col-lg-8 col-md-12 col-sm-12 mt-5  bg-light p-5">
+      <div className="container  col-lg-8 col-md-12 col-sm-12 mt-5  bg-light p-5 shadow">
         <div>
           <h3 className="p-3">Add New User</h3>
         </div>
         <form onSubmit={addMemberController}>
           <div className="form-group ">
-            <label for="exampleInputEmail1">Username</label>
+            <label for="exampleInputEmail1">
+              <h5>Username</h5>
+            </label>
             <input
               type="text"
-              className="form-control"
+              className="form-control p-3 m-3"
               id="username"
               name="username"
               aria-describedby="emailHelp"
@@ -92,10 +94,12 @@ export const Addmemberpage = () => {
           </div>
           <br />
           <div className="form-group">
-            <label for="exampleInputPassword1">Password</label>
+            <label for="exampleInputPassword1">
+              <h5>Password</h5>
+            </label>
             <input
               type="password"
-              className="form-control"
+              className="form-control p-3 m-3"
               id="password"
               name="password"
               placeholder="Password"
@@ -104,10 +108,12 @@ export const Addmemberpage = () => {
           </div>
           <br />
           <div className="form-group">
-            <label for="exampleInputPassword1">Member Status</label>
+            <label for="exampleInputPassword1">
+              <h5>Member status</h5>
+            </label>
             <input
               type="text"
-              className="form-control"
+              className="form-control p-3 m-3"
               id="memberStatus"
               name="memberStatus"
               placeholder="Member status"

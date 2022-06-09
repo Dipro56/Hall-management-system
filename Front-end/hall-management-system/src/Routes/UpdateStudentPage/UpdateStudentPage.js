@@ -51,39 +51,39 @@ export const UpdateStudentPage = (props) => {
   };
   return (
     <div className="d-flex justify-content-center align-items-center flex-column">
-      <div className="d-flex justify-content-center align-items-center ">
+      <div className="d-flex justify-content-center align-items-center col-12 shadow mb-5">
         <button
           onClick={setProfileNegivationController}
           type="button"
-          class="btn btn-link fs-5 m-3"
+          class="btn btn-link fs-5 m-3 p-3"
         >
           Set profile
         </button>
         <button
           onClick={detailNegivationController}
           type="button"
-          class="btn btn-link fs-5 m-3"
+          class="btn btn-link fs-5 m-3 p-3"
         >
           Details
         </button>
         <button
           onClick={addStudentNegivationController}
           type="button"
-          class="btn btn-link fs-5 m-3"
+          class="btn btn-link fs-5 m-3 p-3"
         >
           Add student
         </button>
         <button
           onClick={updateStudentNegivationController}
           type="button"
-          class="btn btn-link fs-5 m-3"
+          class="btn btn-link fs-5 m-3 p-3"
         >
           Update student
         </button>
         <button
           onClick={logoutNegivationController}
           type="button"
-          class="btn btn-link fs-5 m-3"
+          class="btn btn-link fs-5 m-3 p-3"
         >
           Logout
         </button>
@@ -114,7 +114,7 @@ export const UpdateStudentPage = (props) => {
       <div className="mt-5  justify-content-center  col-12">
         <h1>Total Member : {studentListEdit.length}</h1>
         <div className="mb-5 container">
-          <ol>
+          <ol className="shadow p-3 m-3">
             {studentListEdit.map((data) => (
               <StudentListEdit key={data._id} memberInfo={data} />
             ))}

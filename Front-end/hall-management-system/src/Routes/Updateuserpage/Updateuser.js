@@ -94,7 +94,9 @@ export const Updateuserpage = () => {
         </div>
         <form onSubmit={updateMemberController}>
           <div className="form-group ">
-            <label for="exampleInputEmail1">Username</label>
+            <label for="exampleInputEmail1">
+              <h5>Username</h5>
+            </label>
             <input
               type="text"
               className="form-control"
@@ -107,7 +109,9 @@ export const Updateuserpage = () => {
           </div>
           <br />
           <div className="form-group">
-            <label for="exampleInputPassword1">Password</label>
+            <label for="exampleInputPassword1">
+              <h5>Password</h5>
+            </label>
             <input
               type="password"
               className="form-control"
@@ -119,7 +123,9 @@ export const Updateuserpage = () => {
           </div>
           <br />
           <div className="form-group">
-            <label for="exampleInputPassword1">Member Status</label>
+            <label for="exampleInputPassword1">
+              <h5>Member Status</h5>
+            </label>
             <input
               type="text"
               className="form-control"

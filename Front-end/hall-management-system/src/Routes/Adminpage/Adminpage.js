@@ -54,13 +54,15 @@ export const Adminpage = () => {
   };
 
   return (
-    <div className="container col-lg-6 col-md-12 col-sm-12 mt-5  bg-light p-5">
+    <div className="container col-lg-6 col-md-12 col-sm-12 mt-5  bg-light p-5 shadow">
       <form onSubmit={adminFormController}>
-        <div className="form-group ">
-          <label for="exampleInputEmail1">Admin Email</label>
+        <div className="form-group">
+          <label for="exampleInputEmail1">
+            <h5>Admin Email</h5>
+          </label>
           <input
             type="email"
-            className="form-control"
+            className="form-control m-3 p-3 shadow"
             id="email"
             name="email"
             aria-describedby="emailHelp"
@@ -70,10 +72,12 @@ export const Adminpage = () => {
         </div>
         <br />
         <div className="form-group">
-          <label for="exampleInputPassword1">Password</label>
+          <label for="exampleInputPassword1">
+            <h5>Password</h5>
+          </label>
           <input
             type="password"
-            className="form-control"
+            className="form-control m-3 p-3 shadow"
             id="password"
             name="password"
             placeholder="Password"
@@ -89,7 +93,7 @@ export const Adminpage = () => {
           </Link>
         </p>
 
-        <button type="submit" className="btn btn-primary m-3">
+        <button type="submit" className="btn btn-primary m-3 ">
           Submit
         </button>
       </form>

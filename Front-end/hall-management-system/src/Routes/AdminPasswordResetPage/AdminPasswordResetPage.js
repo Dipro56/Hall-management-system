@@ -54,13 +54,15 @@ export const AdminPasswordResetPage = () => {
   return (
     <div className="m-3 p-5">
       <h1 className="m-3">Reset Admin Password</h1>
-      <div className="container col-lg-6 col-md-12 col-sm-12 mt-5  bg-light p-5">
+      <div className="container col-lg-6 col-md-12 col-sm-12 mt-5  bg-light p-5 shadow">
         <form onSubmit={adminPasswordResetFormController}>
           <div className="form-group ">
-            <label for="exampleInputEmail1">Admin Email</label>
+            <label for="exampleInputEmail1">
+              <h5>Admin Email</h5>
+            </label>
             <input
               type="email"
-              className="form-control"
+              className="form-control m-3 p-3"
               id="email"
               name="email"
               aria-describedby="emailHelp"
@@ -70,10 +72,12 @@ export const AdminPasswordResetPage = () => {
           </div>
           <br />
           <div className="form-group">
-            <label for="exampleInputPassword1">Password</label>
+            <label for="exampleInputPassword1">
+              <h5>Password</h5>
+            </label>
             <input
               type="password"
-              className="form-control"
+              className="form-control m-3 p-3"
               id="password"
               name="password"
               placeholder="Password"
@@ -82,10 +86,12 @@ export const AdminPasswordResetPage = () => {
           </div>
           <br />
           <div className="form-group">
-            <label for="exampleInputPassword1">New password</label>
+            <label for="exampleInputPassword1">
+              <h5>New password</h5>
+            </label>
             <input
               type="password"
-              className="form-control"
+              className="form-control m-3 p-3"
               id="newPassword"
               name="newPassword"
               placeholder="New password"
@@ -95,10 +101,12 @@ export const AdminPasswordResetPage = () => {
           <br />
 
           <div className="form-group">
-            <label for="exampleInputPassword1">Confirm password</label>
+            <label for="exampleInputPassword1">
+              <h5>Confirm password</h5>
+            </label>
             <input
               type="password"
-              className="form-control"
+              className="form-control m-3 p-3"
               id="confirmPassword"
               name="confirmPassword"
               placeholder="Confirm password"

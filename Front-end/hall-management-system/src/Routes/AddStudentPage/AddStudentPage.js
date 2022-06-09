@@ -57,52 +57,54 @@ export const AddStudentPage = () => {
   };
 
   return (
-    <div>
-      <div className="d-flex justify-content-center align-items-center ">
+    <div className="mb-5">
+      <div className="d-flex justify-content-center align-items-center shadow ">
         <button
           onClick={setProfileNegivationController}
           type="button"
-          class="btn btn-link fs-5 m-3"
+          class="btn btn-link fs-5 m-3 p-3"
         >
           Set profile
         </button>
         <button
           onClick={detailNegivationController}
           type="button"
-          class="btn btn-link fs-5 m-3"
+          class="btn btn-link fs-5 m-3 p-3"
         >
           Details
         </button>
         <button
           onClick={addStudentNegivationController}
           type="button"
-          class="btn btn-link fs-5 m-3"
+          class="btn btn-link fs-5 m-3 p-3"
         >
           Add student
         </button>
         <button
           onClick={updateStudentNegivationController}
           type="button"
-          class="btn btn-link fs-5 m-3"
+          class="btn btn-link fs-5 m-3 p-3"
         >
           Update student
         </button>
         <button
           onClick={logoutNegivationController}
           type="button"
-          class="btn btn-link fs-5 m-3"
+          class="btn btn-link fs-5 m-3 p-3"
         >
           Logout
         </button>
       </div>
-      <div className="container col-lg-6 col-md-12 col-sm-12 mt-5  bg-light p-5">
+      <div className="container col-lg-6 col-md-12 col-sm-12 mt-5  bg-light p-5 shadow">
         <h1 className="text-primary m-5">Add Student</h1>
         <form onSubmit={studentInfoSubmitController}>
           <div className="form-group ">
-            <label for="exampleInputEmail1">Username</label>
+            <label for="exampleInputEmail1">
+              <h5>Username</h5>
+            </label>
             <input
               type="text"
-              className="form-control"
+              className="form-control m-3 p-3"
               id="username"
               name="username"
               aria-describedby="emailHelp"
@@ -112,10 +114,12 @@ export const AddStudentPage = () => {
           </div>
           <br />
           <div className="form-group">
-            <label for="exampleInputPassword1">Registration no</label>
+            <label for="exampleInputPassword1">
+              <h5>Registration no</h5>
+            </label>
             <input
               type="text"
-              className="form-control"
+              className="form-control m-3 p-3"
               id="registrationNo"
               name="registrationNo"
               placeholder="Registration no"
@@ -124,10 +128,12 @@ export const AddStudentPage = () => {
           </div>
           <br />
           <div className="form-group">
-            <label for="exampleInputPassword1">Session</label>
+            <label for="exampleInputPassword1">
+              <h5>Session</h5>
+            </label>
             <input
               type="text"
-              className="form-control"
+              className="form-control m-3 p-3"
               id="session"
               name="session"
               placeholder="Session"
@@ -136,10 +142,12 @@ export const AddStudentPage = () => {
           </div>
           <br />
           <div className="form-group">
-            <label for="exampleInputPassword1">Allocated hall</label>
+            <label for="exampleInputPassword1">
+              <h5>Allocated hall</h5>
+            </label>
             <input
               type="text"
-              className="form-control"
+              className="form-control m-3 p-3"
               id="allocatedHall"
               name="allocatedHall"
               placeholder="Allocated hall"
@@ -148,10 +156,12 @@ export const AddStudentPage = () => {
           </div>
           <br />
           <div className="form-group">
-            <label for="exampleInputPassword1">Allocated room</label>
+            <label for="exampleInputPassword1">
+              <h5>Allocated room</h5>
+            </label>
             <input
               type="text"
-              className="form-control"
+              className="form-control m-3 p-3"
               id="allocatedRoom"
               name="allocatedRoom"
               placeholder="Allocated room"

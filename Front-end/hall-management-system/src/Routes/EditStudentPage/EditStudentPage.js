@@ -51,7 +51,7 @@ export const EditStudentPage = () => {
 
   return (
     <div>
-      <div className="container  col-lg-8 col-md-12 col-sm-12 mt-5  bg-light p-5">
+      <div className="container  col-lg-8 col-md-12 col-sm-12 mt-5  bg-light p-5 shadow">
         <div>
           <h5>Update user : {updateStudent[0]?.userName} </h5>
           <br />
@@ -62,7 +62,9 @@ export const EditStudentPage = () => {
         </div>
         <form onSubmit={updateStudentController}>
           <div className="form-group ">
-            <label for="exampleInputEmail1">Username</label>
+            <label for="exampleInputEmail1">
+              <h5>Username</h5>
+            </label>
             <input
               type="text"
               className="form-control"
@@ -75,7 +77,9 @@ export const EditStudentPage = () => {
           </div>
           <br />
           <div className="form-group">
-            <label for="exampleInputPassword1">Registration no</label>
+            <label for="exampleInputPassword1">
+              <h5>Registration no</h5>
+            </label>
             <input
               type="text"
               className="form-control"
@@ -87,7 +91,9 @@ export const EditStudentPage = () => {
           </div>
           <br />
           <div className="form-group">
-            <label for="exampleInputPassword1">Session</label>
+            <label for="exampleInputPassword1">
+              <h5>Session</h5>
+            </label>
             <input
               type="text"
               className="form-control"
@@ -99,7 +105,9 @@ export const EditStudentPage = () => {
           </div>
           <br />
           <div className="form-group">
-            <label for="exampleInputPassword1">Allocated hall</label>
+            <label for="exampleInputPassword1">
+              <h5>Allocated hall</h5>
+            </label>
             <input
               type="text"
               className="form-control"
@@ -111,7 +119,9 @@ export const EditStudentPage = () => {
           </div>
           <br />
           <div className="form-group">
-            <label for="exampleInputPassword1">Allocated room</label>
+            <label for="exampleInputPassword1">
+              <h5>Allocated room</h5>
+            </label>
             <input
               type="text"
               className="form-control"

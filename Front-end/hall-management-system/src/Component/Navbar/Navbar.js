@@ -35,6 +35,12 @@ export const Navbar = () => {
           >
             Login
           </Link>
+          <Link
+            className="nav-item nav-link fs-4 ms-2 me-2 text-light"
+            to="/studentLogin"
+          >
+            Student
+          </Link>
         </div>
       </div>
     </nav>

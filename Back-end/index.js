@@ -213,6 +213,15 @@ async function addStudent() {
       res.end();
     });
 
+    app.get('/studentDetails/:id', async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: ObjectId(id) };
+      const cursor = database.find(query);
+      const memberInfo = await cursor.toArray();
+      res.send(memberInfo);
+      res.end();
+    });
+
     app.delete('/studentDetails/:id', async (req, res) => {
       const id = req.params.id;
       const query = { _id: ObjectId(id) };

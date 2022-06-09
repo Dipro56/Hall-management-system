@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate, Navigate, useLocation } from 'react-router-dom';
 import { useStaffLogin } from '../../Hooks/useStaffLogin';
+import './LoginPage.css';
 
 export const Loginpage = () => {
   const { staffList } = useStaffLogin();
@@ -33,14 +34,19 @@ export const Loginpage = () => {
   };
 
   return (
-    <div className="container col-lg-6 col-md-12 col-sm-12 mt-5  bg-light p-5">
-      <div>Staff List : {staffList.length}</div>
+    <div className="container col-lg-6 col-md-12 col-sm-12 mt-5 bg-light shadow p-5">
+      <h1>Staff Login</h1>
+      <div className="m-3">
+        <h3 className="text-light">Total staff : {staffList.length}</h3>
+      </div>
       <form onSubmit={loginFormController}>
         <div className="form-group ">
-          <label for="exampleInputEmail1">Username</label>
+          <label for="exampleInputEmail1">
+            <h5>Username</h5>
+          </label>
           <input
             type="text"
-            className="form-control"
+            className="form-control m-3 p-3 shadow"
             id="username"
             name="username"
             aria-describedby="emailHelp"
@@ -50,10 +56,12 @@ export const Loginpage = () => {
         </div>
         <br />
         <div className="form-group">
-          <label for="exampleInputPassword1">Password</label>
+          <label for="exampleInputPassword1">
+            <h5>Password</h5>
+          </label>
           <input
             type="password"
-            className="form-control"
+            className="form-control m-3 p-3 shadow"
             id="password"
             name="password"
             placeholder="Password"

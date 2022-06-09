@@ -30,7 +30,7 @@ export const MemberList = (props) => {
   };
 
   return (
-    <li className="m-3 bg-light p-3" key={_id}>
+    <li className="m-3 bg-light p-3 shadow" key={_id}>
       <div className="d-flex justify-content-between align-items-center ">
         <div className="d-flex justify-content-end align-item-center ">
           <p>

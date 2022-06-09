@@ -62,40 +62,40 @@ export const StaffPage = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center flex-column">
-      <div className="d-flex justify-content-center align-items-center ">
+    <div className="d-flex justify-content-center align-items-center flex-column mb-5">
+      <div className="col-12 mb-5 d-flex justify-content-center align-items-center shadow">
         <button
           onClick={setProfileNegivationController}
           type="button"
-          class="btn btn-link fs-5 m-3"
+          class="btn btn-link fs-5 m-3 p-3"
         >
           Set profile
         </button>
         <button
           onClick={detailNegivationController}
           type="button"
-          class="btn btn-link fs-5 m-3"
+          class="btn btn-link fs-5 m-3 p-3"
         >
           Details
         </button>
         <button
           onClick={addStudentNegivationController}
           type="button"
-          class="btn btn-link fs-5 m-3"
+          class="btn btn-link fs-5 m-3 p-3"
         >
           Add student
         </button>
         <button
           onClick={updateStudentNegivationController}
           type="button"
-          class="btn btn-link fs-5 m-3"
+          class="btn btn-link fs-5 m-3 p-3"
         >
           Update student
         </button>
         <button
           onClick={logoutNegivationController}
           type="button"
-          class="btn btn-link fs-5 m-3"
+          class="btn btn-link fs-5 m-3 p-3"
         >
           Logout
         </button>
@@ -103,16 +103,18 @@ export const StaffPage = () => {
 
       <h1>Staff page for ID : {id}</h1>
 
-      <div className="container  col-lg-8 col-md-12 col-sm-12 mt-5  bg-light p-5">
+      <div className="container  col-lg-8 col-md-12 col-sm-12 mt-5  bg-light p-5 shadow">
         <div>
           <h3 className="p-3">Update information</h3>
         </div>
         <form onSubmit={addMemberController}>
           <div className="form-group ">
-            <label for="exampleInputEmail1">First name</label>
+            <label for="exampleInputEmail1">
+              <h5>First name</h5>
+            </label>
             <input
               type="text"
-              className="form-control"
+              className="form-control p-3 m-3"
               id="firstName"
               name="firNtname"
               aria-describedby="emailHelp"
@@ -122,10 +124,12 @@ export const StaffPage = () => {
           </div>
           <br />
           <div className="form-group ">
-            <label for="exampleInputEmail1">Last name</label>
+            <label for="exampleInputEmail1">
+              <h5>Last name</h5>
+            </label>
             <input
               type="text"
-              className="form-control"
+              className="form-control p-3 m-3"
               id="lastName"
               name="lastName"
               aria-describedby="emailHelp"
@@ -135,10 +139,12 @@ export const StaffPage = () => {
           </div>
           <br />
           <div className="form-group ">
-            <label for="exampleInputEmail1">Phone number</label>
+            <label for="exampleInputEmail1">
+              <h5>Phone number</h5>
+            </label>
             <input
               type="text"
-              className="form-control"
+              className="form-control p-3 m-3"
               id="phoneNumber"
               name="phoneNumber"
               aria-describedby="emailHelp"

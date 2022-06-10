@@ -1,21 +1,22 @@
 import React from 'react';
 import { useShowAllMember } from '../../Hooks/useShowAllMember';
 import { MemberList } from '../../Component/MemberList/MemberList';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 export const Addmemberpage = () => {
   const { showAllMember } = useShowAllMember();
   const navigate = useNavigate();
+  const { id } = useParams();
 
   const addMemberNegivationController = () => {
-    navigate(`/addMember`, { replace: true });
+    navigate(`/admin/${id}`, { replace: true });
   };
 
   const logoutNegivationController = () => {
     navigate(`/admin`, { replace: true });
   };
   const summeryNegivationController = () => {
-    navigate(`/summery`, { replace: true });
+    navigate(`/summery/${id}`, { replace: true });
   };
 
   const addMemberController = (event) => {

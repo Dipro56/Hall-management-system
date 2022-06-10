@@ -1,11 +1,14 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 export const SummeryPage = () => {
   const navigate = useNavigate();
+  const { id } = useParams();
+  console.log(id);
+  console.log(typeof id);
 
   const addMemberNegivationController = () => {
-    navigate(`/addMember`, { replace: true });
+    navigate(`/admin/${id}`, { replace: true });
   };
 
   const logoutNegivationController = () => {

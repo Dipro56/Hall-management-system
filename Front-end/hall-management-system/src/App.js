@@ -17,6 +17,7 @@ import { EditStudentPage } from './Routes/EditStudentPage/EditStudentPage';
 import { StudentLogin } from './Routes/StudentLogin/StudentLogin';
 import { StudentDetailsViewPage } from './Routes/StudentDetailsViewPage/StudentDetailsViewPage';
 import { Footer } from './Component/Footer/Footer';
+import { ErrorPage } from './Routes/ErrorPage/ErrorPage';
 
 function App() {
   return (
@@ -26,14 +27,14 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/admin" element={<Adminpage />} />
         <Route path="/login" element={<Loginpage />} />
-        <Route path="/addMember" element={<Addmemberpage />} />
+        <Route path="/admin/:id" element={<Addmemberpage />} />
         <Route path="/addMember/:id" element={<Updateuserpage />} />
         <Route path="/userDetails/:id" element={<Userdetailspage />} />
         <Route path="/setStaffProfile/:id" element={<StaffPage />} />
         <Route path="/staffDetail/:id" element={<Staffdetailpage />} />
         <Route path="/addStudent/:id" element={<AddStudentPage />} />
         <Route path="/updateStudent/:id" element={<UpdateStudentPage />} />
-        <Route path="/summery" element={<SummeryPage />} />
+        <Route path="/summery/:id" element={<SummeryPage />} />
         <Route
           path="/adminPasswordReset"
           element={<AdminPasswordResetPage />}
@@ -44,6 +45,7 @@ function App() {
           path="/studentDetails/:id"
           element={<StudentDetailsViewPage />}
         />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />
     </div>

@@ -4,7 +4,6 @@ import { Routes, Route } from 'react-router-dom';
 import { Homepage } from './Routes/Homepage/Homepage';
 import { Loginpage } from './Routes/Loginpage/Loginpage';
 import { Adminpage } from './Routes/Adminpage/Adminpage';
-import { Dashboard } from './Routes/Dashboardpage/Dashboard';
 import { Addmemberpage } from './Routes/Addmemberpage/Addmemberpage';
 import { Updateuserpage } from './Routes/Updateuserpage/Updateuser';
 import { Userdetailspage } from './Routes/Userdetailspage/Userdetailspage';
@@ -17,16 +16,16 @@ import { SummeryPage } from './Routes/SummeryPage/SummeryPage';
 import { EditStudentPage } from './Routes/EditStudentPage/EditStudentPage';
 import { StudentLogin } from './Routes/StudentLogin/StudentLogin';
 import { StudentDetailsViewPage } from './Routes/StudentDetailsViewPage/StudentDetailsViewPage';
+import { Footer } from './Component/Footer/Footer';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App ">
       <Navbar />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/admin" element={<Adminpage />} />
         <Route path="/login" element={<Loginpage />} />
-        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/addMember" element={<Addmemberpage />} />
         <Route path="/addMember/:id" element={<Updateuserpage />} />
         <Route path="/userDetails/:id" element={<Userdetailspage />} />
@@ -46,6 +45,7 @@ function App() {
           element={<StudentDetailsViewPage />}
         />
       </Routes>
+      <Footer />
     </div>
   );
 }

@@ -51,7 +51,7 @@ export const UpdateStudentPage = (props) => {
   };
   return (
     <div className="d-flex justify-content-center align-items-center flex-column">
-      <div className="d-flex justify-content-center align-items-center col-12 shadow mb-5">
+      <div className="d-flex justify-content-center align-items-center col-12 shadow mb-5 ">
         <button
           onClick={setProfileNegivationController}
           type="button"
@@ -114,7 +114,7 @@ export const UpdateStudentPage = (props) => {
       <div className="mt-5  justify-content-center  col-12">
         <h1>Total Member : {studentListEdit.length}</h1>
         <div className="mb-5 container">
-          <ol className="shadow p-3 m-3">
+          <ol className="shadow p-3 m-3 col-lg-12 col-md-12 col-12">
             {studentListEdit.map((data) => (
               <StudentListEdit key={data._id} memberInfo={data} />
             ))}

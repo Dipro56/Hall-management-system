@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAdminCredential } from '../../Hooks/useAdminCredential';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { AdminRequiredAuth } from '../RequiredAuth/AdminRequiredAuth/AdminRequiredAuth';
 
 export const Adminpage = () => {
   //const [adminCredential, setAdminCredential] = useState([]);
   const { adminCredential } = useAdminCredential();
   console.log(adminCredential);
+
+  const [adminLogin, setAdminLogin] = useState(false);
 
   const navigate = useNavigate();
   //const location = useLocation();
@@ -28,10 +31,14 @@ export const Adminpage = () => {
       adminCredential[0].password === password
     ) {
       console.log('admin matched');
-      navigate('/addMember', { replace: true });
+      setAdminLogin(true);
+      <AdminRequiredAuth adminLoginState={adminLogin} />;
+      navigate('/addMember/', { replace: true });
     } else {
       console.log('wrong credential');
       console.log(adminCredential.email, adminCredential.password);
+      setAdminLogin(false);
+      <AdminRequiredAuth adminLoginState={adminLogin} />;
       alert('Give proper email and password');
     }
 

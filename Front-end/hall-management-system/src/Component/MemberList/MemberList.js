@@ -32,11 +32,9 @@ export const MemberList = (props) => {
   return (
     <li className="m-3 bg-light p-3 shadow" key={_id}>
       <div className="d-flex justify-content-between align-items-center ">
-        <div className="d-flex justify-content-end align-item-center ">
-          <p>
-            {' '}
-            &nbsp; Name: {userName} <br /> Status: {memberStatus}
-          </p>
+        <div className="d-flex justify-content-end align-item-center fs-4 text-start flex-column">
+          <p className="text-start"> &nbsp; Name: {userName}</p>
+          <p className="text-start"> &nbsp; Status: {memberStatus}</p>
         </div>
         <div className="d-flex  justify-content-end align-item-center">
           <Link to={`/userDetails/${_id}`}>

@@ -6,7 +6,9 @@ export const useAdminCredential = () => {
   useEffect(() => {
     fetch('http://localhost:5000/admin')
       .then((res) => res.json())
-      .then((data) => setAdminCredential(data));
+      .then((data) => {
+        setAdminCredential(data);
+      });
   }, []);
 
   return {

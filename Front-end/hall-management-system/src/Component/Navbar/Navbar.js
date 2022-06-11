@@ -33,7 +33,7 @@ export const Navbar = () => {
             className="nav-item nav-link fs-4 ms-2 me-2 text-light"
             to="/login"
           >
-            Login
+            Staff
           </Link>
           <Link
             className="nav-item nav-link fs-4 ms-2 me-2 text-light"

@@ -29,8 +29,8 @@ export const StudentLogin = () => {
 
   return (
     <div className="m-4 p-4">
-      <h1>Student Login</h1>
       <div className="container col-lg-6 col-md-12 col-sm-12 mt-5 shadow-lg bg-light p-5">
+        <h1 className="mb-5">Student Login</h1>
         <form onSubmit={studentLoginController}>
           <div className="form-group ">
             <label for="exampleInputEmail1">

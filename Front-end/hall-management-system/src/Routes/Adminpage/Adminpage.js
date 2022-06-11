@@ -2,16 +2,13 @@ import React from 'react';
 import { useAdminCredential } from '../../Hooks/useAdminCredential';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { AdminRequiredAuth } from '../RequiredAuth/AdminRequiredAuth/AdminRequiredAuth';
+// import { useAdminAuth } from '../../Hooks/useAdminAuth';
 
 export const Adminpage = () => {
-  //const [adminCredential, setAdminCredential] = useState([]);
   const { adminCredential } = useAdminCredential();
 
-  // const [adminLogin, setAdminLogin] = useState(false);
-
   const navigate = useNavigate();
-  //const location = useLocation();
+  // const location = useLocation();
 
   //let form = '/dashboard';
 
@@ -23,20 +20,17 @@ export const Adminpage = () => {
 
     console.log(email, password);
 
-    // const adminInfo = { email, password };
-
     if (
       adminCredential[0].email === email &&
       adminCredential[0].password === password
     ) {
       console.log('admin matched', adminCredential[0]._id);
-      // setAdminLogin(true);
+
       navigate(`/admin/${adminCredential[0]._id}`, { replace: true });
     } else {
       console.log('wrong credential');
       console.log(adminCredential.email, adminCredential.password);
-      // setAdminLogin(false);
-      <AdminRequiredAuth adminLoginState={false} />;
+
       alert('Give proper email and password');
     }
 
@@ -60,6 +54,7 @@ export const Adminpage = () => {
 
   return (
     <div className="container col-lg-6 col-md-12 col-sm-12 mt-5  bg-light p-5 shadow">
+      <h1 className="mb-5">Admin Login</h1>
       <form onSubmit={adminFormController}>
         <div className="form-group">
           <label for="exampleInputEmail1">

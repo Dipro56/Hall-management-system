@@ -28,6 +28,7 @@ function App() {
         <Route path="/admin" element={<Adminpage />} />
         <Route path="/login" element={<Loginpage />} />
         <Route path="/admin/:id" element={<Addmemberpage />} />
+
         <Route path="/addMember/:id" element={<Updateuserpage />} />
         <Route path="/userDetails/:id" element={<Userdetailspage />} />
         <Route path="/setStaffProfile/:id" element={<StaffPage />} />

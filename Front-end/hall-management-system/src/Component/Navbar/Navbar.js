@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import DU_Logo from '../../Assets/DU_Logo.png';
+import iutLogo from '../../Assets/iut-logo.png';
 
 export const Navbar = () => {
   return (
@@ -19,7 +19,7 @@ export const Navbar = () => {
       </button>
       <div className="collapse navbar-collapse " id="navbarNavAltMarkup">
         <div className="navbar-nav align-items-center">
-          <img className="logo m-3" src={DU_Logo} alt=".." />
+          <img className="logo m-3" src={iutLogo} alt=".." />
           <Link className="nav-item nav-link fs-4 ms-2 me-2 text-light" to="/">
             Home
           </Link>

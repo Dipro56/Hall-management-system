@@ -7,7 +7,7 @@ export const Footer = () => {
 
   return (
     <div class="footer p-2">
-      <p className="pt-2 fs-4">Dhaka University Hall Authority © {year}</p>
+      <p className="pt-2 fs-4">IUT Hall Management System © {year}</p>
     </div>
   );
 };

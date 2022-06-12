@@ -1,8 +1,8 @@
 import React from 'react';
-import DU1 from '../../Assets/du1.jpeg';
-import DU2 from '../../Assets/du2.jpg';
-import DU3 from '../../Assets/du3.jpg';
-import DU4 from '../../Assets/du4.jpeg';
+import IUT1 from '../../Assets/iut1.jpg';
+import IUT2 from '../../Assets/iut2.jpg';
+import IUT3 from '../../Assets/iut3.jpg';
+import IUT4 from '../../Assets/iut4.jpg';
 
 export const Carousel = () => {
   return (
@@ -43,52 +43,52 @@ export const Carousel = () => {
         <div className="carousel-item active" data-bs-interval="10000">
           <img
             style={{ height: 500 }}
-            src={DU1}
+            src={IUT1}
             className="d-block w-100 container-fluid"
             alt="..."
           />
           <div className="carousel-caption d-none d-md-block">
             <h2 className="text-light bg-dark p-4">
-              Dhaka University Hall Management System
+              IUT Hall Management System
             </h2>
           </div>
         </div>
         <div className="carousel-item" data-bs-interval="2000">
           <img
             style={{ height: 500 }}
-            src={DU2}
+            src={IUT2}
             className="d-block w-100 container-fluid "
             alt="..."
           />
           <div className="carousel-caption d-none d-md-block">
             <h2 className="text-light bg-dark p-4">
-              Dhaka University Hall Management System
+              IUT Hall Management System
             </h2>
           </div>
         </div>
         <div className="carousel-item">
           <img
             style={{ height: 500 }}
-            src={DU3}
+            src={IUT3}
             className="d-block w-100 container-fluid"
             alt="..."
           />
           <div className="carousel-caption d-none d-md-block">
             <h2 className="text-light bg-dark p-4">
-              Dhaka University Hall Management System
+              IUT Hall Management System
             </h2>
           </div>
         </div>
         <div className="carousel-item">
           <img
             style={{ height: 500 }}
-            src={DU4}
+            src={IUT4}
             className="d-block w-100 container-fluid"
             alt="..."
           />
           <div className="carousel-caption d-none d-md-block">
             <h2 className="text-light bg-dark p-4">
-              Dhaka University Hall Management System
+              IUT Hall Management System
             </h2>
           </div>
         </div>

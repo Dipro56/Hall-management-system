@@ -1,16 +1,12 @@
 import React from 'react';
-import { useAdminCredential } from '../../Hooks/useAdminCredential';
-import { useNavigate } from 'react-router-dom';
+
 import { Link } from 'react-router-dom';
 // import { useAdminAuth } from '../../Hooks/useAdminAuth';
 
+import { useAdminInfo } from '../../Hooks/useAdminInfo';
+
 export const Adminpage = () => {
-  const { adminCredential } = useAdminCredential();
-
-  const navigate = useNavigate();
-  // const location = useLocation();
-
-  //let form = '/dashboard';
+  const { setAdminInfo } = useAdminInfo();
 
   const adminFormController = (event) => {
     event.preventDefault();
@@ -18,38 +14,9 @@ export const Adminpage = () => {
     const email = event.target.email.value;
     const password = event.target.password.value;
 
-    console.log(email, password);
+    const admin = { email, password };
 
-    if (
-      adminCredential[0].email === email &&
-      adminCredential[0].password === password
-    ) {
-      console.log('admin matched', adminCredential[0]._id);
-
-      navigate(`/admin/${adminCredential[0]._id}`, { replace: true });
-    } else {
-      console.log('wrong credential');
-      console.log(adminCredential.email, adminCredential.password);
-
-      alert('Give proper email and password');
-    }
-
-    //fetch post code
-
-    // fetch('http://localhost:5000/admin', {
-    //   method: 'POST', // or 'PUT'
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(adminInfo),
-    // })
-    //   .then((response) => response.json())
-    //   .then((adminInfo) => {
-    //     console.log('Success:', adminInfo);
-    //   })
-    //   .catch((error) => {
-    //     console.error('Error:', error);
-    //   });
+    setAdminInfo(admin);
   };
 
   return (
